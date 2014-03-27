@@ -13,12 +13,12 @@ if [ -f "${DONEFILE}" ]; then
 fi
 
 # Actual shell commands here.
-echo "Downloading and unpacking mongo..."
+echo "Running MongoDB provisioning script..."
 mkdir -p ${CACHE}
 if [ -f "${CACHE}/${ARCHIVE}" ]; then
-  echo "Mongo already cached.  Not downloading." 
+  echo "MongoDB is already cached. Skipping download." 
 else
-  echo "Downloading mongo..."
+  echo "Downloading MongoDB..."
   wget --quiet --output-document=${CACHE}/${ARCHIVE} http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.9.tgz
 fi
 mkdir -p ${MONGODIR}
